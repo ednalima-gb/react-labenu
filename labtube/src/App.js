@@ -1,4 +1,6 @@
 import './App.css';
+import { ListItem } from './components/ListItem';
+import { VideoCard } from './components/VideoCard';
 
 function App() {
 
@@ -7,6 +9,7 @@ function App() {
   function reproduzVideo() {
     alert("O vídeo está sendo reproduzido")
   }
+
 
   return (
     <div>
@@ -18,22 +21,17 @@ function App() {
 
         <main>
             <nav className="menu-vertical">
-                <ul>
-                    <li className="botoes-meunu-vertical">Início</li>
-                    <li className="botoes-meunu-vertical">Em alta</li>
-                    <li className="botoes-meunu-vertical">Inscrições</li>
-                    <hr/>
-                    <li className="botoes-meunu-vertical">Originais</li>
-                    <li className="botoes-meunu-vertical">Histórico</li>
-                </ul>
+               <ListItem/>
             </nav>
 
             <section className="painel-de-videos">
-                <div className="box-pagina-principal media1" onclick="reproduzVideo()">
+           
+              <VideoCard/>
+                 {/* <div className="box-pagina-principal media1" >
                     <img src="https://picsum.photos/400/400?a=1 " alt=""/>
                     <h4>{titulo}</h4>
                     <button onClick={reproduzVideo}>Reproduzir vídeo</button>
-                </div>
+                </div> */}
                 <div className="box-pagina-principal media2" onclick="reproduzVideo()">
                     <img src="https://picsum.photos/400/400?a=2 " alt=""/>
                     <h4>{titulo}</h4>
@@ -68,7 +66,7 @@ function App() {
                     <img src="https://picsum.photos/400/400?a=8 " alt=""/>
                     <h4>{titulo}</h4>
                     <button onClick={reproduzVideo}>Reproduzir vídeo</button>
-                </div>
+                </div> 
             </section>
         </main>
 
