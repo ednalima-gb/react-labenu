@@ -1,14 +1,15 @@
 import React from 'react';
 
-export function ListItem () {
+export function ListItem (props) {
     return (
         <ul>
-        <li className="botoes-meunu-vertical">Início</li>
-        <li className="botoes-meunu-vertical">Em alta</li>
-        <li className="botoes-meunu-vertical">Inscrições</li>
-        <hr/>
-        <li className="botoes-meunu-vertical">Originais</li>
-        <li className="botoes-meunu-vertical">Histórico</li>
+        <li className="botoes-meunu-vertical">{props.name1}</li>
+        <li className="botoes-meunu-vertical">{props.name2}</li>
+        <li className="botoes-meunu-vertical">{props.name3}</li>
+
+        <li className="botoes-meunu-vertical">{props.name4}</li>
+        <li className="botoes-meunu-vertical">{props.name5}</li>
+        
     </ul>
     )
 }

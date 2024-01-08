@@ -21,12 +21,17 @@ function App() {
 
         <main>
             <nav className="menu-vertical">
-               <ListItem/>
+               <ListItem name1 = {"Início"}/>
+               <ListItem name2 = {"Em alta"}/>
+               <ListItem name3 = {"Inscrições"}/>
+               <hr/>
+               <ListItem name4 = {"Originais"}/>
+               <ListItem name5 = {"Histórico"}/>
             </nav>
 
             <section className="painel-de-videos">
            
-              <VideoCard/>
+              <VideoCard text = {titulo}/>
                  {/* <div className="box-pagina-principal media1" >
                     <img src="https://picsum.photos/400/400?a=1 " alt=""/>
                     <h4>{titulo}</h4>
