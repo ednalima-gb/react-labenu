@@ -3,13 +3,22 @@ import styles from 'styled-components';
 
 
 const Stylemessage = styles.div`
-  background-color: blue;
-  width: 100%
-  
+  display: flex;
+  height: 90vh;
+  align-items: end;
+
+  ;
 `
 
-export function Message (){
-  return (
-    <Stylemessage>TESTE</Stylemessage>
+export function Message ({ user, message }){
+  if(user === '' || message === ''){
+    return (
+      <Stylemessage></Stylemessage>
+    )
+  }else{
+    return (
+    <Stylemessage>{`${user} : ${message}`}</Stylemessage>
   )
+  }
+  
 }

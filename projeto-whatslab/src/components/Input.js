@@ -1,16 +1,18 @@
-
-import { useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const Styleinput = styled.div`
-background-color: pink;
 display: flex;
+width: 100%;
+
+input {
+  width: 100%;
+}
 
 `
 
-export function Input (){
-
-  const [inputUser, setInputUser] = useState('valor inicial')
+export function Input ({onSendMessage}){ 
+  const [inputUser, setInputUser] = useState('')
   const [inputMessage, setInputMessage] = useState('')
 
    const handleInputUser = (event) => {
@@ -22,20 +24,16 @@ export function Input (){
     setInputMessage(event.target.value)
   }
 
-  const showMessage = () => {
-    const resUser = inputUser
-    const resMessage = inputMessage
-   
-    console.log(resUser, ': ', resMessage)
-    
+  const handleSendMessage = () => {
+    onSendMessage(inputUser, inputMessage)
   }
- 
+
   return (
      
       <Styleinput>
         <input placeholder= "usuário" value={inputUser} onChange={handleInputUser} />
         <input placeholder= "mensagem" value={inputMessage} onChange={handleInputMessage} />
-        <button onClick={showMessage}>Enviar</button>
+        <button onClick={handleSendMessage}>Enviar</button>
       </Styleinput>    
   )
 }
